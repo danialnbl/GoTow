@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "658791948674",
+    "firebase_url": "https://gotow-32951-default-rtdb.firebaseio.com",
+    "project_id": "gotow-32951",
+    "storage_bucket": "gotow-32951.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658791948674:android:35b6782518917f73966f9b",
+        "android_client_info": {
+          "package_name": "com.sendiribuat.gotow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658791948674-tvpvegcg6cp5mei3em03e7vfleg89a3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sendiribuat.gotow",
+            "certificate_hash": "e3996676b4f1faa6a9f98562aec08cafbdddf973"
+          }
+        },
+        {
+          "client_id": "658791948674-ap96ar0m7fpk9ed7dac2jc6uheuhpov9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCKqEgUNYSLHLxz16l4er0NGo197VwMu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658791948674-ap96ar0m7fpk9ed7dac2jc6uheuhpov9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
