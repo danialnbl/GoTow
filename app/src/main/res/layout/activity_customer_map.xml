@@ -96,12 +96,48 @@
             </LinearLayout>
         </LinearLayout>
 
-        <Button
+        <LinearLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Call Towing"
-            android:id="@+id/request"
-            android:layout_gravity="bottom"/>
+            android:orientation="vertical">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioGroup"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flatbed"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/quantum_greyblack1000"
+                    android:id="@+id/Flatbed"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hook"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/quantum_greyblack1000"
+                    android:id="@+id/Hook"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WheelLift"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/quantum_greyblack1000"
+                    android:id="@+id/WheelLift"/>
+            </RadioGroup>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Call Towing"
+                android:id="@+id/request"
+                android:layout_gravity="bottom"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 

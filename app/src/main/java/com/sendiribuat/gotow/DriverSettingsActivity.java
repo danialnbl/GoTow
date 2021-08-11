@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -47,8 +49,11 @@ public class DriverSettingsActivity extends AppCompatActivity {
     private String mPhone;
     private String mCar;
     private String mProfileImageUrl;
+    private String mService;
 
     private Uri resultUri;
+
+    private RadioGroup mRadioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +65,8 @@ public class DriverSettingsActivity extends AppCompatActivity {
         mCarField = (EditText) findViewById(R.id.car);
 
         mProfileImage = (ImageView) findViewById(R.id.profileImage);
+
+        mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
         mBack = (Button) findViewById(R.id.back);
         mConfirm = (Button) findViewById(R.id.confirm);
@@ -114,6 +121,20 @@ public class DriverSettingsActivity extends AppCompatActivity {
                         mCar = map.get("car").toString();
                         mCarField.setText(mCar);
                     }
+                    if(map.get("service")!=null){
+                        mService = map.get("service").toString();
+                        switch (mService){
+                            case"Flatbed":
+                                mRadioGroup.check(R.id.Flatbed);
+                                break;
+                            case"Hook":
+                                mRadioGroup.check(R.id.Hook);
+                                break;
+                            case"Wheel Lift":
+                                mRadioGroup.check(R.id.WheelLift);
+                                break;
+                        }
+                    }
                     if(map.get("profileImageUrl")!=null){
                         mProfileImageUrl = map.get("profileImageUrl").toString();
                         Glide.with(getApplication()).load(mProfileImageUrl).into(mProfileImage);
@@ -134,10 +155,21 @@ public class DriverSettingsActivity extends AppCompatActivity {
         mPhone = mPhoneField.getText().toString();
         mCar = mCarField.getText().toString();
 
+        int selectId = mRadioGroup.getCheckedRadioButtonId();
+
+        final RadioButton radioButton = (RadioButton) findViewById(selectId);
+
+        if (radioButton.getText()== null ){
+            return;
+        }
+
+        mService = radioButton.getText().toString();
+
         Map userInfo = new HashMap();
         userInfo.put("name", mName);
         userInfo.put("phone", mPhone);
         userInfo.put("car", mCar);
+        userInfo.put("service", mService);
         mDriverDatabase.updateChildren(userInfo);
 
         if(resultUri != null) {
